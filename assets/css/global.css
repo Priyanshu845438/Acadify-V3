@@ -1,219 +1,302 @@
-/* Global CSS - Site-wide styles inspired by Ideovent design */
+/* Global Design System - Professional & Cohesive Styling */
+/* Technology: Pure Bootstrap 5.3+ */
 
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Roboto:wght@400&display=swap');
+
+/* Color Palette Variables - Bootstrap 5.3+ Compliant */
 :root {
-  --bs-primary: #6366f1;
-  --bs-primary-rgb: 99, 102, 241;
-  --bs-secondary: #8b5cf6;
-  --bs-secondary-rgb: 139, 92, 246;
-  --gradient-primary: linear-gradient(135deg, #6366f1, #8b5cf6);
-  --gradient-secondary: linear-gradient(135deg, #3b82f6, #6366f1);
+  /* Bootstrap Variable Overrides - The Right Way */
+  --bs-primary: #0D6EFD;
+  --bs-primary-rgb: 13, 110, 253;
+  --bs-light: #F8F9FA;
+  --bs-dark: #212529;
+  --bs-body-color: #495057;
+  --bs-body-bg: #FFFFFF;
+  
+  /* Custom Design System Variables - Alias to Bootstrap tokens for consistency */
+  --primary-blue: var(--bs-primary);
+  --dark-charcoal: var(--bs-dark);
+  --muted-gray: var(--bs-body-color);
+  --light-gray: var(--bs-light);
+  --white: var(--bs-body-bg);
+  
+  /* Shadow System */
+  --shadow-sm: 0 .125rem .25rem rgba(0,0,0,.075);
+  --shadow-hover: 0 .5rem 1rem rgba(0,0,0,.15);
+  
+  /* Transitions */
   --transition-base: all 0.3s ease-in-out;
-  --shadow-light: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  --shadow-medium: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-  --shadow-large: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
 }
 
-/* Dark theme adjustments */
-[data-bs-theme="dark"] {
-  --bs-primary: #818cf8;
-  --bs-primary-rgb: 129, 140, 248;
-  --bs-secondary: #a78bfa;
-  --bs-secondary-rgb: 167, 139, 250;
-}
-
-/* Base typography */
+/* Typography System */
 body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-family: 'Roboto', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-weight: 400;
   line-height: 1.6;
-  color: #374151;
+  color: var(--muted-gray);
+  background-color: var(--white);
 }
 
-[data-bs-theme="dark"] body {
-  color: #e5e7eb;
-}
-
-/* Headings */
+/* Headings Typography - All headings use Poppins as per spec */
 h1, h2, h3, h4, h5, h6 {
-  font-weight: 600;
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: var(--dark-charcoal);
   line-height: 1.2;
-  color: #111827;
+  margin-bottom: 1rem;
 }
 
-[data-bs-theme="dark"] h1, 
-[data-bs-theme="dark"] h2, 
-[data-bs-theme="dark"] h3, 
-[data-bs-theme="dark"] h4, 
-[data-bs-theme="dark"] h5, 
-[data-bs-theme="dark"] h6 {
-  color: #f9fafb;
+h1 {
+  font-weight: 700;
 }
 
-/* Text gradient utility */
-.text-gradient {
-  background: var(--gradient-primary);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  color: transparent;
+h2, h3, h4, h5, h6 {
+  font-weight: 600;
 }
 
-/* Custom button styling */
+/* Body Text */
+p, li, span {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  color: var(--muted-gray);
+}
+
+/* Lead Text */
+.lead {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 1.25rem;
+  color: var(--muted-gray);
+}
+
+/* Button System */
+.btn {
+  border-radius: 50rem !important; /* .rounded-pill */
+  padding: 12px 28px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  transition: var(--transition-base);
+  border-width: 2px;
+}
+
+/* Primary CTA Buttons - Solid Blue */
 .btn-primary {
-  background: var(--gradient-primary);
-  border: none;
-  border-radius: 8px;
-  padding: 12px 24px;
-  font-weight: 600;
-  font-size: 16px;
-  transition: var(--transition-base);
-  box-shadow: var(--shadow-light);
-}
-
-.btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-medium);
-  background: var(--gradient-secondary);
-}
-
-.btn-outline-primary {
-  border: 2px solid var(--bs-primary);
-  color: var(--bs-primary);
-  border-radius: 8px;
-  padding: 10px 22px;
-  font-weight: 600;
-  background: transparent;
-  transition: var(--transition-base);
-}
-
-.btn-outline-primary:hover {
-  background: var(--bs-primary);
-  color: white;
-  transform: translateY(-1px);
-}
-
-.btn-custom {
-  border-radius: 8px;
-  padding: 12px 24px;
-  font-weight: 600;
-  text-transform: none;
-  transition: var(--transition-base);
-}
-
-.btn-custom:hover {
-  transform: translateY(-2px);
-}
-
-/* Form styling */
-.form-control {
-  border: 2px solid #e5e7eb;
-  border-radius: 8px;
-  padding: 12px 16px;
-  transition: var(--transition-base);
-}
-
-.form-control:focus {
+  background-color: var(--bs-primary);
   border-color: var(--bs-primary);
-  box-shadow: 0 0 0 0.2rem rgba(var(--bs-primary-rgb), 0.15);
+  color: var(--bs-white);
 }
 
-[data-bs-theme="dark"] .form-control {
-  background-color: #374151;
-  border-color: #4b5563;
-  color: #f9fafb;
+.btn-primary:hover,
+.btn-primary:focus {
+  background-color: var(--bs-primary);
+  border-color: var(--bs-primary);
+  color: var(--bs-white);
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-2px);
 }
 
-/* Section spacing */
-section {
-  scroll-margin-top: 80px;
-  padding: 80px 0;
+/* Secondary Buttons - Outline */
+.btn-outline-primary {
+  color: var(--bs-primary);
+  border-color: var(--bs-primary);
+  background-color: transparent;
 }
 
-/* Background variations */
-.bg-gradient {
-  background: var(--gradient-primary);
+.btn-outline-primary:hover,
+.btn-outline-primary:focus {
+  background-color: var(--bs-primary);
+  border-color: var(--bs-primary);
+  color: var(--bs-white);
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-2px);
 }
 
-.bg-light-gradient {
-  background: linear-gradient(135deg, #f8fafc, #f1f5f9);
+/* Light/White Buttons */
+.btn-light {
+  background-color: var(--white);
+  border-color: var(--white);
+  color: var(--primary-blue);
 }
 
-[data-bs-theme="dark"] .bg-light-gradient {
-  background: linear-gradient(135deg, #1f2937, #111827);
+.btn-light:hover,
+.btn-light:focus {
+  background-color: var(--bs-white);
+  border-color: var(--bs-white);
+  color: var(--bs-primary);
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-2px);
 }
 
-/* Text utilities */
-.text-muted {
-  color: #6b7280 !important;
+/* Button Sizes */
+.btn-lg {
+  padding: 16px 32px;
+  font-size: 1.125rem;
 }
 
-[data-bs-theme="dark"] .text-muted {
-  color: #9ca3af !important;
+.btn-sm {
+  padding: 8px 20px;
+  font-size: 0.875rem;
 }
 
-/* Card styling */
+/* Card System */
 .card {
-  border: none;
-  border-radius: 16px;
+  border: 1px solid rgba(0,0,0,.125);
+  border-radius: 0.375rem;
+  box-shadow: var(--shadow-sm);
   transition: var(--transition-base);
-  box-shadow: var(--shadow-light);
+  background-color: var(--white);
 }
 
 .card:hover {
   transform: translateY(-4px);
-  box-shadow: var(--shadow-medium);
+  box-shadow: var(--shadow-hover);
 }
 
-/* Stats section */
-.stats-item {
-  text-align: center;
-  padding: 2rem 1rem;
+.card-body {
+  padding: 1.5rem;
 }
 
-.stats-number {
-  font-size: 3rem;
-  font-weight: 800;
+/* Custom Spacing Classes - Don't override Bootstrap utilities */
+section {
+  padding: 5rem 0; /* Generous section spacing */
+}
+
+/* Custom spacing utilities instead of overriding Bootstrap */
+.section-space {
+  padding: 5rem 0;
+}
+
+.space-y-lg {
+  margin-bottom: 5rem;
+}
+
+.space-y-md {
+  margin-bottom: 3rem;
+}
+
+/* Custom Background Classes - Don't override Bootstrap utilities */
+.hero-gradient {
+  background: linear-gradient(135deg, var(--primary-blue), #0B5ED7) !important;
+}
+
+/* Custom Text Utilities - Use Bootstrap variables only */
+/* Removed .text-* overrides for Bootstrap 5.3+ compliance */
+
+/* Link Styling */
+a {
   color: var(--bs-primary);
-  display: block;
+  text-decoration: none;
+  transition: var(--transition-base);
 }
 
-.stats-label {
-  font-size: 1.1rem;
-  color: #6b7280;
-  font-weight: 500;
+a:hover {
+  color: var(--bs-primary);
+  opacity: 0.8;
 }
 
-/* Responsive adjustments */
+/* Navigation Dropdowns */
+.dropdown-menu {
+  border: 1px solid rgba(0,0,0,.15);
+  box-shadow: var(--shadow-hover);
+  border-radius: 0.375rem;
+}
+
+.dropdown-item {
+  font-family: 'Roboto', sans-serif;
+  color: var(--muted-gray);
+  padding: 0.75rem 1.5rem;
+  transition: var(--transition-base);
+}
+
+.dropdown-item:hover {
+  background-color: var(--light-gray);
+  color: var(--primary-blue);
+}
+
+/* Form Controls */
+.form-control {
+  border: 2px solid #DEE2E6;
+  border-radius: 0.375rem;
+  padding: 12px 16px;
+  font-family: 'Roboto', sans-serif;
+  transition: var(--transition-base);
+}
+
+.form-control:focus {
+  border-color: var(--primary-blue);
+  box-shadow: 0 0 0 0.2rem rgba(var(--bs-primary-rgb), 0.25);
+}
+
+/* Icon Styling */
+.bi {
+  color: var(--bs-primary);
+}
+
+/* Display Utilities */
+.display-1, .display-2, .display-3, .display-4, .display-5, .display-6 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  color: var(--dark-charcoal);
+}
+
+/* Utility Classes */
+.fw-bold {
+  font-weight: 700 !important;
+}
+
+.fw-medium {
+  font-weight: 600 !important;
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
   section {
-    padding: 60px 0;
+    padding: 3rem 0;
   }
   
   .display-4 {
     font-size: 2.5rem;
   }
   
-  .btn-custom {
-    padding: 10px 20px;
-    font-size: 0.95rem;
+  .btn {
+    padding: 10px 24px;
+    font-size: 0.9rem;
   }
   
-  .stats-number {
-    font-size: 2.5rem;
+  .btn-lg {
+    padding: 14px 28px;
+    font-size: 1rem;
   }
 }
 
-/* Smooth scrolling */
+@media (max-width: 576px) {
+  section {
+    padding: 2rem 0;
+  }
+  
+  .display-4 {
+    font-size: 2rem;
+  }
+  
+  .btn {
+    padding: 8px 20px;
+    font-size: 0.875rem;
+  }
+}
+
+/* Smooth Scrolling */
 html {
   scroll-behavior: smooth;
 }
 
-/* Loading states */
+/* Loading States */
 .loading {
   opacity: 0.6;
   pointer-events: none;
 }
 
-/* Animations */
+/* Animation System */
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -229,24 +312,43 @@ html {
   animation: fadeInUp 0.6s ease-out;
 }
 
-/* Service card hover effects */
-.service-card {
-  position: relative;
-  overflow: hidden;
+/* Dark Theme Support */
+[data-bs-theme="dark"] {
+  --white: #212529;
+  --light-gray: #2D3136;
+  --muted-gray: #ADB5BD;
+  --dark-charcoal: #F8F9FA;
 }
 
-.service-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: var(--gradient-primary);
-  opacity: 0.05;
-  transition: var(--transition-base);
+[data-bs-theme="dark"] body {
+  background-color: var(--white);
+  color: var(--muted-gray);
 }
 
-.service-card:hover::before {
-  left: 0;
+[data-bs-theme="dark"] h1,
+[data-bs-theme="dark"] h2,
+[data-bs-theme="dark"] h3,
+[data-bs-theme="dark"] h4,
+[data-bs-theme="dark"] h5,
+[data-bs-theme="dark"] h6 {
+  color: var(--dark-charcoal);
+}
+
+[data-bs-theme="dark"] .card {
+  background-color: var(--light-gray);
+  border-color: #495057;
+}
+
+[data-bs-theme="dark"] .dropdown-menu {
+  background-color: var(--light-gray);
+  border-color: #495057;
+}
+
+[data-bs-theme="dark"] .dropdown-item {
+  color: var(--muted-gray);
+}
+
+[data-bs-theme="dark"] .dropdown-item:hover {
+  background-color: #495057;
+  color: var(--primary-blue);
 }
