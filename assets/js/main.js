@@ -1,6 +1,33 @@
 // Main JavaScript functionality
 document.addEventListener('DOMContentLoaded', function() {
     
+    // --- Mobile Viewport Height Fix ---
+    function setVhProperty() {
+        const vh = window.innerHeight * 0.01;
+        document.documentElement.style.setProperty('--vh', `${vh}px`);
+    }
+    
+    setVhProperty();
+    window.addEventListener('resize', setVhProperty);
+    
+    // --- Mobile Navigation Close on Link Click ---
+    const navbarNav = document.querySelector('.navbar-nav');
+    const navbarToggler = document.querySelector('.navbar-toggler');
+    const navbarCollapse = document.querySelector('.navbar-collapse');
+    
+    if (navbarNav && navbarToggler && navbarCollapse) {
+        navbarNav.addEventListener('click', function(e) {
+            const link = e.target.closest('.nav-link:not(.dropdown-toggle)');
+            if (link && window.innerWidth < 992) {
+                // Close mobile menu when clicking a nav link
+                const bsCollapse = new bootstrap.Collapse(navbarCollapse, {
+                    toggle: false
+                });
+                bsCollapse.hide();
+            }
+        });
+    }
+    
     // --- Hero Section: Counter Animation ---
     const counter = document.getElementById('satisfaction-counter');
     if (counter) {
@@ -18,10 +45,18 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         // Use Intersection Observer to trigger counter only when visible
+        // Check for prefers-reduced-motion
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    animateCounter();
+                    if (prefersReducedMotion) {
+                        // Skip animation, set final value immediately
+                        counter.textContent = '98%';
+                    } else {
+                        animateCounter();
+                    }
                     observer.unobserve(entry.target); // Animate only once
                 }
             });
@@ -33,18 +68,23 @@ document.addEventListener('DOMContentLoaded', function() {
     const heroSection = document.querySelector('.hero-section');
     const videoWrapper = document.querySelector('.hero-video-wrapper');
     if (heroSection && videoWrapper) {
-        heroSection.addEventListener('mousemove', function(e) {
-            if (window.innerWidth > 992) { // Only apply on desktop
-                const { clientX, clientY } = e;
-                const { offsetWidth, offsetHeight } = heroSection;
-                
-                // Calculate movement amount (adjust divisor for more/less effect)
-                const xMovement = (clientX / offsetWidth - 0.5) * 20; 
-                const yMovement = (clientY / offsetHeight - 0.5) * 20;
+        // Check for prefers-reduced-motion
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        
+        if (!prefersReducedMotion) {
+            heroSection.addEventListener('mousemove', function(e) {
+                if (window.innerWidth > 992) { // Only apply on desktop
+                    const { clientX, clientY } = e;
+                    const { offsetWidth, offsetHeight } = heroSection;
+                    
+                    // Calculate movement amount (adjust divisor for more/less effect)
+                    const xMovement = (clientX / offsetWidth - 0.5) * 20; 
+                    const yMovement = (clientY / offsetHeight - 0.5) * 20;
 
-                videoWrapper.style.transform = `translate(${xMovement}px, ${yMovement}px)`;
-            }
-        });
+                    videoWrapper.style.transform = `translate(${xMovement}px, ${yMovement}px)`;
+                }
+            });
+        }
     }
     
     // Smooth scrolling for anchor links
