@@ -11,7 +11,7 @@
   --bs-primary-rgb: 13, 50, 105;
   --bs-light: #F8F9FA;
   --bs-dark: #212529;
-  --bs-body-color: #495057;
+  --bs-body-color: #333333;
   --bs-body-bg: #FFFFFF;
   
   /* Custom Design System Variables - Alias to Bootstrap tokens for consistency */
@@ -79,6 +79,7 @@ p, li, span {
   background-image: linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
                     linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
   background-size: 20px 20px;
+  padding-bottom: 160px;
 }
 
 /* Style the visual element to pop */
