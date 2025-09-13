@@ -5,11 +5,11 @@
   background-size: 400% 400%;
   animation: gradientAnimation 15s ease infinite;
   overflow: hidden;
-  min-height: calc(100vh - 76px);
+  min-height: 60vh;
   position: relative;
   display: flex;
   align-items: center;
-  padding: 2rem 0;
+  padding: 3rem 0 4rem 0;
 }
 
 /* Gradient animation */
@@ -226,11 +226,34 @@
   }
 }
 
+/* Tablet specific fixes */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .hero-section {
+    min-height: auto;
+    padding: 4rem 0 5rem 0;
+  }
+  
+  .hero-headline {
+    font-size: clamp(2rem, 5vw, 2.75rem);
+    line-height: 1.2;
+    margin-bottom: 1.25rem;
+  }
+  
+  .hero-subheadline {
+    font-size: clamp(1rem, 2.5vw, 1.125rem);
+    margin-bottom: 2rem;
+  }
+  
+  .hero-video-wrapper {
+    margin-top: 1.5rem;
+  }
+}
+
 /* Mobile responsive adjustments */
 @media (min-width: 576px) {
   .hero-section {
-    min-height: calc(100vh - 84px);
-    padding: 3rem 0;
+    min-height: 65vh;
+    padding: 4rem 0 5rem 0;
   }
 
   .hero-section .btn-light {
@@ -250,7 +273,8 @@
 
 @media (min-width: 768px) {
   .hero-section {
-    padding: 4rem 0;
+    min-height: 70vh;
+    padding: 5rem 0 6rem 0;
   }
 
   .hero-subheadline {
@@ -271,12 +295,19 @@
 
 @media (min-width: 992px) {
   .hero-section {
-    min-height: calc(100vh - 88px);
-    padding: 5rem 0;
+    min-height: 80vh;
+    padding: 6rem 0 7rem 0;
   }
 
   .hero-section .btn-light:hover {
     transform: translateY(-2px);
+  }
+}
+
+@media (min-width: 1200px) {
+  .hero-section {
+    min-height: calc(100vh - 88px);
+    padding: 7rem 0;
   }
 }
 
