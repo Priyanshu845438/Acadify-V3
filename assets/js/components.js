@@ -101,6 +101,7 @@ document.addEventListener('DOMContentLoaded', function() {
     componentLoader.loadComponent('#site-header', '/components/navbar.html');
     componentLoader.loadComponent('#hero-section', '/components/hero.html');
     componentLoader.loadComponent('#site-footer', '/components/footer.html');
+    componentLoader.loadComponent('#apptestify-platform-section', '/components/apptestify-platform.html');
     componentLoader.loadComponent('#why-choose-us-section', '/components/why-choose-us.html');
     componentLoader.loadComponent('#case-studies-section', '/components/case-studies.html');
     componentLoader.loadComponent('#trusted-by-section', '/components/trusted-by.html');
