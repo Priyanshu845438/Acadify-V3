@@ -34,7 +34,7 @@ class ComponentLoader {
 
     async loadServiceCard(selector, icon, title, description, link = '#') {
         try {
-            const response = await fetch('components/service-card.html');
+            const response = await fetch('/components/service-card.html');
             const html = await response.text();
             
             const customizedHtml = html
@@ -54,7 +54,7 @@ class ComponentLoader {
 
     async loadTestimonialCard(selector, content, name, title, avatar) {
         try {
-            const response = await fetch('components/testimonial-card.html');
+            const response = await fetch('/components/testimonial-card.html');
             const html = await response.text();
             
             const customizedHtml = html
@@ -74,7 +74,7 @@ class ComponentLoader {
 
     async loadFeatureCard(selector, icon, title, description) {
         try {
-            const response = await fetch('components/feature-card.html');
+            const response = await fetch('/components/feature-card.html');
             const html = await response.text();
             
             const customizedHtml = html
@@ -98,9 +98,9 @@ const componentLoader = new ComponentLoader();
 // Load components when DOM is ready
 document.addEventListener('DOMContentLoaded', function() {
     // Load main components
-    componentLoader.loadComponent('#site-header', 'components/navbar.html');
-    componentLoader.loadComponent('#hero-section', 'components/hero.html');
-    componentLoader.loadComponent('#site-footer', 'components/footer.html');
+    componentLoader.loadComponent('#site-header', '/components/navbar.html');
+    componentLoader.loadComponent('#hero-section', '/components/hero.html');
+    componentLoader.loadComponent('#site-footer', '/components/footer.html');
     
     // Load service cards with different content
     componentLoader.loadServiceCard('#service-card-1', 'bi-code-slash', 'Software Development', 'We provide custom software development for your business, Billing, Inventory and every custom solution.');
