@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm" data-testid="navbar-main">
     <div class="container">
-        <a class="navbar-brand fw-bold fs-4 text-gradient" href="index.html" data-testid="link-brand">
+        <a class="navbar-brand fw-bold fs-4 text-gradient" href="/" data-testid="link-brand">
             <i class="bi bi-hexagon me-2"></i>Ideovent Technologies
         </a>
         
@@ -12,16 +12,87 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto me-3">
                 <li class="nav-item">
-                    <a class="nav-link fw-medium active" href="#home" data-testid="link-home">Home</a>
+                    <a class="nav-link fw-medium active" href="/" data-testid="link-home">Home</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link fw-medium" href="#services" data-testid="link-services">Services</a>
+                
+                <!-- Services Dropdown -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle fw-medium" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Services
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
+                        <li><a class="dropdown-item" href="/pages/services.html#app-development">App Development</a></li>
+                        <li><a class="dropdown-item" href="/pages/services.html#web-development">Web Development</a></li>
+                        <li><a class="dropdown-item" href="/pages/services.html#custom-development">Custom Development</a></li>
+                        <li><a class="dropdown-item" href="/pages/services.html#ui-ux-design">UI/UX Design</a></li>
+                        <li><a class="dropdown-item" href="/pages/services.html#social-media-marketing">Social Media Marketing</a></li>
+                        <li><a class="dropdown-item" href="/pages/services.html#it-consulting">IT Consulting</a></li>
+                        <li><a class="dropdown-item" href="/pages/services.html#maintenance-support">Maintenance & Support</a></li>
+                        <li><a class="dropdown-item" href="/pages/services.html#digital-marketing">Digital Marketing</a></li>
+                        <li><a class="dropdown-item" href="/pages/services.html#seo-optimization">SEO Optimization</a></li>
+                    </ul>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link fw-medium" href="#about" data-testid="link-about">About</a>
+
+                <!-- Industries Dropdown -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle fw-medium" href="#" id="industriesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Industries
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="industriesDropdown">
+                        <li><a class="dropdown-item" href="/pages/industries.html#banking-financial">Banking, Financial Services & Insurance</a></li>
+                        <li><a class="dropdown-item" href="/pages/industries.html#healthcare">Healthcare & Life Sciences</a></li>
+                        <li><a class="dropdown-item" href="/pages/industries.html#retail-ecommerce">Retail & E-commerce</a></li>
+                        <li><a class="dropdown-item" href="/pages/industries.html#telecom-media">Telecom & Media</a></li>
+                        <li><a class="dropdown-item" href="/pages/industries.html#edtech-education">EdTech & Education</a></li>
+                        <li><a class="dropdown-item" href="/pages/industries.html#travel-hospitality">Travel & Hospitality</a></li>
+                        <li><a class="dropdown-item" href="/pages/industries.html#manufacturing">Manufacturing Industries</a></li>
+                        <li><a class="dropdown-item" href="/pages/industries.html#government">Government & Public Sector</a></li>
+                        <li><a class="dropdown-item" href="/pages/industries.html#startups">Startups & Digital Platforms</a></li>
+                    </ul>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link fw-medium" href="pages/contact.html" data-testid="link-contact">Contact</a>
+
+                <!-- Solutions Dropdown -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle fw-medium" href="#" id="solutionsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Solutions
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="solutionsDropdown">
+                        <li><a class="dropdown-item" href="/pages/solutions.html#digital-onboarding">Digital Onboarding</a></li>
+                        <li><a class="dropdown-item" href="/pages/solutions.html#brand-building">Brand Building</a></li>
+                        <li><a class="dropdown-item" href="/pages/solutions.html#digital-visibility">Digital Visibility</a></li>
+                        <li><a class="dropdown-item" href="/pages/solutions.html#pos">POS</a></li>
+                        <li><a class="dropdown-item" href="/pages/solutions.html#hrms">HRMS</a></li>
+                        <li><a class="dropdown-item" href="/pages/solutions.html#crm">CRM</a></li>
+                        <li><a class="dropdown-item" href="/pages/solutions.html#erp">ERP</a></li>
+                    </ul>
+                </li>
+
+                <!-- Insights Dropdown -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle fw-medium" href="#" id="insightsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Insights
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="insightsDropdown">
+                        <li><a class="dropdown-item" href="/pages/insights.html#overview">Overview</a></li>
+                        <li><a class="dropdown-item" href="/pages/insights.html#blogs">Blogs</a></li>
+                        <li><a class="dropdown-item" href="/pages/insights.html#case-studies">Case Studies</a></li>
+                        <li><a class="dropdown-item" href="/pages/insights.html#portfolio">Portfolio</a></li>
+                        <li><a class="dropdown-item" href="/pages/insights.html#testimonials">Testimonials</a></li>
+                    </ul>
+                </li>
+
+                <!-- About Us Dropdown -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle fw-medium" href="#" id="aboutDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        About Us
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
+                        <li><a class="dropdown-item" href="/pages/about.html#who-we-are">Who We Are</a></li>
+                        <li><a class="dropdown-item" href="/pages/about.html#leadership-team">Leadership Team</a></li>
+                        <li><a class="dropdown-item" href="/pages/about.html#why-acadify">Why Acadify</a></li>
+                        <li><a class="dropdown-item" href="/pages/about.html#partners-alliances">Partners & Alliances</a></li>
+                        <li><a class="dropdown-item" href="/pages/contact.html">Contact</a></li>
+                    </ul>
                 </li>
             </ul>
             
