@@ -111,32 +111,47 @@
   font-weight: 500;
 }
 
-/* Trust indicators */
-.trust-indicators {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  border-radius: 16px;
-  padding: 2rem;
+/* Hero Image Container */
+.hero-image-container {
   margin-top: 3rem;
-  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-.trust-stat {
-  text-align: center;
-  color: white;
+.carousel-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(13, 110, 253, 0.1) 0%, rgba(11, 94, 215, 0.2) 100%);
+  pointer-events: none;
+  border-radius: 1.5rem;
 }
 
-.trust-stat .number {
-  font-size: 2.5rem;
-  font-weight: 800;
-  display: block;
-  margin-bottom: 0.5rem;
+.satisfaction-badge {
+  animation: float 3s ease-in-out infinite;
+  z-index: 10;
 }
 
-.trust-stat .label {
-  font-size: 0.9rem;
-  opacity: 0.9;
-  font-weight: 500;
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+/* Smooth carousel transitions */
+.carousel-item {
+  transition: transform 0.8s ease-in-out;
+}
+
+.carousel-item img {
+  transition: transform 0.8s ease-in-out;
+}
+
+.carousel-item.active img {
+  transform: scale(1.02);
+}
+
+#heroImageCarousel .carousel-inner {
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
 }
 
 /* Scroll indicator animation */
@@ -197,13 +212,17 @@
     margin-right: 0;
   }
   
-  .trust-indicators {
+  .hero-image-container {
     margin-top: 2rem;
-    padding: 1.5rem;
   }
   
-  .trust-stat .number {
-    font-size: 2rem;
+  #heroImageCarousel .carousel-inner {
+    height: 300px !important;
+  }
+  
+  .satisfaction-badge {
+    bottom: 10px !important;
+    right: 10px !important;
   }
 }
 
