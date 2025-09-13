@@ -573,3 +573,32 @@ html {
     }
   }
 }
+
+/* Latest Blogs Component Styling */
+.blog-card {
+  background-color: #FFFBEB !important; /* Creamy-beige background */
+  border: 1px solid #FDEEC9 !important; /* Slightly darker border */
+  border-radius: 1rem !important; /* Softer, more pronounced rounded corners */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.blog-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0.8rem 1.5rem rgba(0, 0, 0, 0.1) !important;
+}
+
+.blog-card .card-img-top {
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  height: 200px;
+  object-fit: cover;
+}
+
+.blog-card .read-more-link {
+  color: #D48C00; /* Mustard-yellow color */
+}
+
+.blog-card .read-more-link:hover {
+  color: #A06800; /* Darker shade on hover */
+  text-decoration: underline !important;
+}

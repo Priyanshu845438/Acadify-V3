@@ -21,6 +21,14 @@ TechSite is a modern, component-based static website built for Ideovent Technolo
 - **Consistent Template System**: Established consistent page template with hero sections, detailed content, and call-to-action elements
 - **SEO Optimization**: Each page includes proper meta tags, descriptions, and semantic HTML structure
 
+### September 2025 - Latest Insights & Blogs Component
+- **Blog Section Addition**: Added comprehensive "Latest Insights & Blogs" component to home page with professional design
+- **6-Card Grid Layout**: Featured 3x2 grid showcasing AI Revolution in Software Testing, Modern QA Operating Models, Modernizing QA Stack, Cloud Native Testing, QA Advisory Partnership, and QA Roadmap Building
+- **Unique Card Styling**: Creamy-beige background (#FFFBEB) with soft borders, rounded corners, and smooth hover animations
+- **Professional Images**: High-quality Unsplash images for each blog post with proper alt text and responsive design
+- **Interactive Elements**: Mustard-yellow "Read More" links with hover effects and unified "View All Blogs" call-to-action button
+- **Mobile Responsive**: Bootstrap 5 grid system ensuring perfect layout across desktop (3-column), tablet (2-column), and mobile (1-column)
+
 ## User Preferences
 
 Preferred communication style: Simple, everyday language.
