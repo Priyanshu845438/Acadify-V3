@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="/assets/css/components/feature-card.css">
     <link rel="stylesheet" href="/assets/css/components/case-studies.css">
     <link rel="stylesheet" href="/assets/css/components/footer.css">
+    <link rel="stylesheet" href="/assets/css/components/testimonial-cta.css">
 </head>
 <body>
     <!-- Navigation -->
@@ -557,86 +558,8 @@
         </div>
     </section>
 
-    <!-- Final CTA Section -->
-    <section class="py-5" id="contact-form" style="background: linear-gradient(135deg, #0d3269 0%, #1a4f8a 100%);">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-8 text-center">
-                    <h2 class="display-6 fw-bold text-white mb-4">Protect Your Business with Professional Support</h2>
-                    <p class="lead text-white mb-5">Don't wait for system failures to disrupt your business. Get proactive maintenance and peace of mind today.</p>
-                    
-                    <div class="bg-white rounded-4 p-5">
-                        <h4 class="fw-bold mb-4">Get Your Maintenance & Support Quote</h4>
-                        <form class="row g-3">
-                            <div class="col-md-6">
-                                <label for="fullName" class="form-label fw-semibold">Full Name *</label>
-                                <input type="text" class="form-control" id="fullName" required>
-                            </div>
-                            <div class="col-md-6">
-                                <label for="email" class="form-label fw-semibold">Email Address *</label>
-                                <input type="email" class="form-control" id="email" required>
-                            </div>
-                            <div class="col-md-6">
-                                <label for="phone" class="form-label fw-semibold">Phone Number</label>
-                                <input type="tel" class="form-control" id="phone">
-                            </div>
-                            <div class="col-md-6">
-                                <label for="company" class="form-label fw-semibold">Company Name</label>
-                                <input type="text" class="form-control" id="company">
-                            </div>
-                            <div class="col-12">
-                                <label for="supportNeed" class="form-label fw-semibold">Primary Support Need *</label>
-                                <select class="form-select" id="supportNeed" required>
-                                    <option value="">Select support focus</option>
-                                    <option value="preventive-maintenance">Preventive Maintenance & Monitoring</option>
-                                    <option value="technical-support">24/7 Technical Support</option>
-                                    <option value="performance-optimization">Performance Optimization</option>
-                                    <option value="legacy-system-support">Legacy System Support</option>
-                                    <option value="security-maintenance">Security & Compliance Maintenance</option>
-                                    <option value="backup-recovery">Backup & Disaster Recovery</option>
-                                    <option value="comprehensive-support">Comprehensive Support Plan</option>
-                                    <option value="emergency-support">Emergency/Critical Support</option>
-                                </select>
-                            </div>
-                            <div class="col-md-6">
-                                <label for="systemType" class="form-label fw-semibold">System/Platform Type</label>
-                                <select class="form-select" id="systemType">
-                                    <option value="">Select system type</option>
-                                    <option value="web-application">Web Application</option>
-                                    <option value="mobile-app">Mobile Application</option>
-                                    <option value="desktop-software">Desktop Software</option>
-                                    <option value="saas-platform">SaaS Platform</option>
-                                    <option value="e-commerce">E-commerce Site</option>
-                                    <option value="database-systems">Database Systems</option>
-                                    <option value="cloud-infrastructure">Cloud Infrastructure</option>
-                                    <option value="multiple-systems">Multiple Systems</option>
-                                </select>
-                            </div>
-                            <div class="col-md-6">
-                                <label for="urgency" class="form-label fw-semibold">Support Urgency</label>
-                                <select class="form-select" id="urgency">
-                                    <option value="">Select urgency level</option>
-                                    <option value="immediate">Immediate (System down/critical)</option>
-                                    <option value="high">High (Performance issues)</option>
-                                    <option value="medium">Medium (Planning ahead)</option>
-                                    <option value="low">Low (General inquiry)</option>
-                                </select>
-                            </div>
-                            <div class="col-12">
-                                <label for="systemDescription" class="form-label fw-semibold">Current System & Support Needs</label>
-                                <textarea class="form-control" id="systemDescription" rows="4" placeholder="Describe your current system, existing challenges, current support setup (if any), and what kind of maintenance and support you're looking for..."></textarea>
-                            </div>
-                            <div class="col-12">
-                                <button type="submit" class="btn btn-primary btn-lg px-5">
-                                    <i class="bi bi-shield-check me-2"></i>Get Support Plan Quote
-                                </button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <!-- Combined Testimonial & CTA Section -->
+    <div id="testimonial-cta-section"></div>
 
     <!-- Support Success Story Modals -->
     

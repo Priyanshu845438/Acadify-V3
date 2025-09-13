@@ -22,6 +22,8 @@
     <link rel="stylesheet" href="/assets/css/components/feature-card.css">
     <link rel="stylesheet" href="/assets/css/components/case-studies.css">
     <link rel="stylesheet" href="/assets/css/components/footer.css">
+    <link rel="stylesheet" href="/assets/css/components/testimonial-cta.css">
+
 </head>
 <body>
     <!-- Navigation -->
@@ -557,84 +559,8 @@
         </div>
     </section>
 
-    <!-- Final CTA Section -->
-    <section class="py-5" id="contact-form" style="background: linear-gradient(135deg, #0d3269 0%, #1a4f8a 100%);">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-8 text-center">
-                    <h2 class="display-6 fw-bold text-white mb-4">Ready to Build Your Custom Solution?</h2>
-                    <p class="lead text-white mb-5">Let's discuss your requirements and create software that perfectly fits your business needs</p>
-                    
-                    <div class="bg-white rounded-4 p-5">
-                        <h4 class="fw-bold mb-4">Get Your Free Consultation & Estimate</h4>
-                        <form class="row g-3">
-                            <div class="col-md-6">
-                                <label for="fullName" class="form-label fw-semibold">Full Name *</label>
-                                <input type="text" class="form-control" id="fullName" required>
-                            </div>
-                            <div class="col-md-6">
-                                <label for="email" class="form-label fw-semibold">Email Address *</label>
-                                <input type="email" class="form-control" id="email" required>
-                            </div>
-                            <div class="col-md-6">
-                                <label for="phone" class="form-label fw-semibold">Phone Number</label>
-                                <input type="tel" class="form-control" id="phone">
-                            </div>
-                            <div class="col-md-6">
-                                <label for="company" class="form-label fw-semibold">Company Name</label>
-                                <input type="text" class="form-control" id="company">
-                            </div>
-                            <div class="col-12">
-                                <label for="projectType" class="form-label fw-semibold">Development Need *</label>
-                                <select class="form-select" id="projectType" required>
-                                    <option value="">Select development type</option>
-                                    <option value="enterprise-software">Enterprise Software Development</option>
-                                    <option value="api-integration">API Development & Integration</option>
-                                    <option value="legacy-modernization">Legacy System Modernization</option>
-                                    <option value="custom-erp-crm">Custom ERP/CRM System</option>
-                                    <option value="data-analytics">Data Analytics Platform</option>
-                                    <option value="workflow-automation">Workflow Automation</option>
-                                    <option value="consultation">Initial Consultation</option>
-                                </select>
-                            </div>
-                            <div class="col-md-6">
-                                <label for="timeline" class="form-label fw-semibold">Preferred Timeline</label>
-                                <select class="form-select" id="timeline">
-                                    <option value="">Select timeline</option>
-                                    <option value="asap">ASAP (Rush project)</option>
-                                    <option value="2-4-months">2-4 months</option>
-                                    <option value="4-8-months">4-8 months</option>
-                                    <option value="8-months-plus">8+ months</option>
-                                    <option value="flexible">Flexible timeline</option>
-                                </select>
-                            </div>
-                            <div class="col-md-6">
-                                <label for="budget" class="form-label fw-semibold">Project Budget Range</label>
-                                <select class="form-select" id="budget">
-                                    <option value="">Select budget range</option>
-                                    <option value="under-500k">Under ₹5,00,000</option>
-                                    <option value="500k-1000k">₹5,00,000 - ₹10,00,000</option>
-                                    <option value="1000k-2000k">₹10,00,000 - ₹20,00,000</option>
-                                    <option value="2000k-plus">₹20,00,000+</option>
-                                    <option value="discuss">Prefer to discuss</option>
-                                </select>
-                            </div>
-                            <div class="col-12">
-                                <label for="projectDetails" class="form-label fw-semibold">Project Details</label>
-                                <textarea class="form-control" id="projectDetails" rows="4" placeholder="Describe your business requirements, current challenges, existing systems that need integration, specific features needed, etc."></textarea>
-                            </div>
-                            <div class="col-12">
-                                <button type="submit" class="btn btn-primary btn-lg px-5">
-                                    <i class="bi bi-send me-2"></i>Get Free Consultation
-                                </button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
+    <!-- Combined Testimonial & CTA Section -->
+    <div id="testimonial-cta-section"></div>
     <!-- Project Modals -->
     
     <!-- Custom Development Project 1 Modal -->

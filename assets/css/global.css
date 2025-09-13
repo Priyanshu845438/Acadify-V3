@@ -7,7 +7,7 @@
 /* Color Palette Variables - Bootstrap 5.3+ Compliant */
 :root {
   /* Bootstrap Variable Overrides - The Right Way */
-  --bs-primary: #0d3269;
+  --bs-primary: #0d3169;
   --bs-primary-rgb: 13, 50, 105;
   --bs-light: #F8F9FA;
   --bs-dark: #212529;
@@ -230,7 +230,7 @@ a:hover {
 
 /* Icon Styling */
 .bi {
-  color: var(--bs-primary);
+  color: white;
 }
 
 /* Display Utilities */
@@ -536,8 +536,8 @@ html {
 
 /* Latest Blogs Component Styling */
 .blog-card {
-  background-color: #FFFBEB !important; /* Creamy-beige background */
-  border: 1px solid #FDEEC9 !important; /* Slightly darker border */
+  background-color: #0d326966 !important; /* Creamy-beige background */
+  border: 1px solid #0d3269 !important; /* Slightly darker border */
   border-radius: 1rem !important; /* Softer, more pronounced rounded corners */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }

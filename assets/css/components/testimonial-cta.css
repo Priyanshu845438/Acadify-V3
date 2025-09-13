@@ -12,7 +12,7 @@
   right: 0;
   width: 45%; /* Adjust the split point */
   height: 100%;
-  background-color: #0A2540; /* A professional navy blue */
+  background-color: #0d3166; /* A professional navy blue */
   z-index: 1;
 }
 
@@ -38,7 +38,7 @@
 .carousel-controls .btn:hover {
   background-color: var(--bs-primary);
   border-color: var(--bs-primary);
-  color: white;
+  color: #0d2649;
 }
 
 /* CTA section styling */
