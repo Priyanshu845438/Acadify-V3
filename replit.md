@@ -39,6 +39,16 @@ TechSite is a modern, component-based static website built for Ideovent Technolo
 - **Mobile Performance**: Smart video/image switching - professional team image placeholder for desktop, optimized fallback image for mobile
 - **Visual Hierarchy**: Updated typography with display-3 headline, improved spacing, and better contrast with animated background
 
+### September 2025 - Testimonial-CTA Component Enhancement
+- **Overlapping Card Design**: Replaced disjointed two-section layout with professional overlapping white card design that unifies the component
+- **Split Background**: Implemented light gray (#F8F9FA) left background (60%) with professional navy blue (#0A2540) right background (40%)
+- **Floating Card Effect**: Large white testimonial card with rounded corners and prominent drop shadow sits on top of both backgrounds
+- **Improved Layout**: 7-5 column split with testimonial carousel in overlapping card and CTA content on navy blue background
+- **Enhanced Typography**: White text on navy background with proper contrast and `!important` declarations for visibility
+- **Mobile Responsive**: Intelligent layout transformation - overlapping design on desktop, clean stacked layout on mobile
+- **Professional Styling**: Rounded carousel controls, smooth animations, and enhanced button hover effects
+- **Visual Cohesion**: Single unified component feel instead of two separate sections pushed together
+
 ### September 2025 - Dark Mode Removal
 - **Complete Dark Mode Cleanup**: Removed dark mode toggle button from navigation bar 
 - **JavaScript Cleanup**: Eliminated all theme toggle functionality, localStorage theme handling, and related event listeners
