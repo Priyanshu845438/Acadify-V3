@@ -1,0 +1,172 @@
+Excellent choice. This is a very clean, modern, and effective way to display a range of services. The central illustration is a brilliant design choice that breaks the grid's monotony and adds a human touch.
+
+Here is the complete breakdown to recreate this section perfectly.
+
+1. The AI UI Generation Prompt
+
+This prompt is crafted to generate a high-fidelity visual that your developer can use as a precise target.
+
+"UI design for an 'IT Services' section of a corporate website. The design is minimalist, clean, and organized around a central illustration.
+
+Layout & Elements:
+
+Headline: A prominent, center-aligned headline at the top. Text: 'Reach out to the world's most reliable IT services.' The words 'IT services' are highlighted in the primary blue color (#0D6EFD) and have a short blue underline accent.
+
+Grid: A 3-column grid of service cards. The grid has 8 cards in total, with the centermost position (the 5th slot) being occupied by an illustration, not a card.
+
+Service Cards:
+
+Style: Clean white cards with soft, rounded corners and a subtle drop shadow to make them appear floating.
+
+Content Hierarchy:
+
+A rounded-square icon with a solid blue background and a white glyph inside (e.g., a code bracket, a globe).
+
+A bold service title in dark charcoal text (e.g., 'Digital Marketing').
+
+A short, 2-3 line description in a lighter gray text.
+
+A 'Discover now →' link at the bottom in the primary blue color.
+
+Central Illustration: A modern, flat-style illustration of a person sitting at a desk and working on a computer. The illustration should have a friendly and professional aesthetic, using a muted color palette that complements the website's primary blue.
+
+The overall background is a clean white. The design should feel spacious, trustworthy, and high-fidelity."
+
+2. The Developer's Blueprint (HTML & Bootstrap Structure)
+
+This is the practical code to build the section. It uses Bootstrap 5's grid system and card components for a fully responsive structure.
+
+code
+Html
+download
+content_copy
+expand_less
+
+<!-- OUR SERVICES SECTION -->
+<section class="py-5">
+  <div class="container">
+
+    <!-- Section Header -->
+    <div class="row justify-content-center mb-5">
+      <div class="col-lg-8 text-center">
+        <h2 class="display-5 fw-bold">
+          Reach out to the world's most reliable 
+          <span class="text-primary">IT services.</span>
+        </h2>
+        <p class="lead text-muted">We offer a complete suite of solutions to help your business grow.</p>
+      </div>
+    </div>
+
+    <!-- Services Grid -->
+    <div class="row g-4 align-items-center">
+
+      <!-- Card 1: Custom Software -->
+      <div class="col-lg-4 col-md-6">
+        <div class="card h-100 shadow-sm border-0 rounded-4">
+          <div class="card-body p-4">
+            <!-- Icon -->
+            <div class="mb-3">
+                <span class="d-inline-flex justify-content-center align-items-center rounded-3 bg-primary text-white" style="width: 48px; height: 48px;">
+                    <i class="bi bi-code-slash fs-4"></i>
+                </span>
+            </div>
+            <h5 class="card-title fw-bold">Custom Software</h5>
+            <p class="card-text text-muted">We provide custom software development for your business, billing, inventory, and every custom solution.</p>
+            <a href="#" class="text-primary fw-semibold text-decoration-none">Discover now →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2: Website Design -->
+      <div class="col-lg-4 col-md-6">
+        <div class="card h-100 shadow-sm border-0 rounded-4">
+          <!-- Card content... -->
+        </div>
+      </div>
+
+      <!-- Card 3: App Development -->
+      <div class="col-lg-4 col-md-6">
+        <div class="card h-100 shadow-sm border-0 rounded-4">
+          <!-- Card content... -->
+        </div>
+      </div>
+
+      <!-- Card 4: Digital Marketing -->
+      <div class="col-lg-4 col-md-6">
+        <div class="card h-100 shadow-sm border-0 rounded-4">
+          <!-- Card content... -->
+        </div>
+      </div>
+
+      <!-- === CENTRAL ILLUSTRATION === -->
+      <!-- This is visible only on large screens, replacing a card slot -->
+      <div class="col-lg-4 d-none d-lg-block text-center">
+        <img src="path/to/your-illustration.svg" alt="IT Professional at work" class="img-fluid">
+      </div>
+      
+      <!-- Card 5: Domain & Hosting -->
+      <div class="col-lg-4 col-md-6">
+        <div class="card h-100 shadow-sm border-0 rounded-4">
+          <!-- Card content... -->
+        </div>
+      </div>
+
+      <!-- Card 6: ERP & CRM -->
+      <div class="col-lg-4 col-md-6">
+        <div class="card h-100 shadow-sm border-0 rounded-4">
+          <!-- Card content... -->
+        </div>
+      </div>
+
+      <!-- Card 7: Maintenance -->
+      <div class="col-lg-4 col-md-6">
+        <div class="card h-100 shadow-sm border-0 rounded-4">
+          <!-- Card content... -->
+        </div>
+      </div>
+      
+      <!-- Card 8: Explore More -->
+      <div class="col-lg-4 col-md-6">
+        <div class="card h-100 shadow-sm border-0 rounded-4">
+          <!-- Card content... -->
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+3. Functionality & Mobile Responsive Instructions
+
+Custom CSS for Hover Effect: The design has a subtle elegance. Add a small hover effect to the cards to make them feel interactive.
+
+code
+CSS
+download
+content_copy
+expand_less
+IGNORE_WHEN_COPYING_START
+IGNORE_WHEN_COPYING_END
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+}
+
+Icons: The code uses Bootstrap Icons. Ensure you have the icon font linked in your project. You can easily replace bi bi-code-slash with any other icon from their library.
+
+Mobile Responsive Behavior (Crucial):
+
+Desktop (lg and up): The grid will be a 3-column layout. The central illustration will be visible (d-lg-block), creating the exact look from the image.
+
+Tablet (md): The grid will become a 2-column layout (col-md-6). All cards will be visible, and the illustration will be hidden to maintain a clean grid.
+
+Mobile (smaller than md): The grid will stack into a 1-column layout. Each card will take up the full width, providing a clear, scrollable list of services.
+
+The Illustration's Role: The key to the responsive design is hiding the illustration on smaller screens. The classes d-none d-lg-block on the illustration's column do exactly this:
+
+d-none: The element is hidden by default (on mobile).
+
+d-lg-block: The element becomes visible (display: block) only on large screens and up. This prevents an awkward gap in the grid on tablet and mobile views.

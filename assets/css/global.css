@@ -352,3 +352,18 @@ html {
   background-color: #495057;
   color: var(--primary-blue);
 }
+
+/* Service Cards Enhanced Hover Effect */
+.service-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Blue underline accent for IT services */
+.text-primary .position-absolute {
+  transition: width 0.3s ease;
+}
