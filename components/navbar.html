@@ -1,0 +1,38 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm" data-testid="navbar-main">
+    <div class="container">
+        <a class="navbar-brand fw-bold fs-4 text-gradient" href="index.html" data-testid="link-brand">
+            <i class="bi bi-hexagon me-2"></i>Ideovent Technologies
+        </a>
+        
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" data-testid="button-nav-toggle">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto me-3">
+                <li class="nav-item">
+                    <a class="nav-link fw-medium active" href="#home" data-testid="link-home">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link fw-medium" href="#services" data-testid="link-services">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link fw-medium" href="#about" data-testid="link-about">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link fw-medium" href="pages/contact.html" data-testid="link-contact">Contact</a>
+                </li>
+            </ul>
+            
+            <div class="d-flex align-items-center gap-2">
+                <button class="btn btn-outline-secondary btn-sm" id="themeToggle" data-testid="button-theme-toggle">
+                    <i class="bi bi-moon" id="themeIcon"></i>
+                </button>
+                <button class="btn btn-primary btn-custom" data-testid="button-get-started">
+                    Get Started
+                </button>
+            </div>
+        </div>
+    </div>
+</nav>

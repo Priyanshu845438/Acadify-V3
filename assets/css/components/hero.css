@@ -1,0 +1,223 @@
+/* Hero Section Component Styles - Ideovent inspired */
+
+.hero-section {
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.95), rgba(139, 92, 246, 0.9)), 
+              url('../img/hero-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 120px 0 80px;
+}
+
+/* Dark mode hero adjustment */
+[data-bs-theme="dark"] .hero-section {
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.98), rgba(139, 92, 246, 0.95)), 
+              url('../img/hero-bg.jpg');
+}
+
+/* Hero content */
+.hero-section h1 {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: white;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1.5rem;
+  line-height: 1.1;
+}
+
+.hero-section .lead {
+  font-size: 1.25rem;
+  color: rgba(255, 255, 255, 0.9);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2.5rem;
+  font-weight: 400;
+}
+
+/* Hero buttons */
+.hero-section .btn-light {
+  background: white;
+  color: var(--bs-primary);
+  border: none;
+  font-weight: 600;
+  padding: 14px 28px;
+  border-radius: 8px;
+  transition: var(--transition-base);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.hero-section .btn-light:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  color: var(--bs-primary);
+}
+
+.hero-section .btn-outline-light {
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  color: white;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 12px 26px;
+  border-radius: 8px;
+  transition: var(--transition-base);
+}
+
+.hero-section .btn-outline-light:hover {
+  background: white;
+  color: var(--bs-primary);
+  border-color: white;
+  transform: translateY(-1px);
+}
+
+/* Client avatars section */
+.client-avatars {
+  margin-top: 3rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.client-avatars .avatar-group {
+  display: flex;
+  margin-right: 1rem;
+}
+
+.client-avatars .avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  margin-left: -12px;
+  transition: var(--transition-base);
+}
+
+.client-avatars .avatar:first-child {
+  margin-left: 0;
+}
+
+.client-avatars .avatar:hover {
+  transform: scale(1.1);
+  border-color: white;
+  z-index: 10;
+  position: relative;
+}
+
+.client-avatars .trust-text {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* Trust indicators */
+.trust-indicators {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 2rem;
+  margin-top: 3rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.trust-stat {
+  text-align: center;
+  color: white;
+}
+
+.trust-stat .number {
+  font-size: 2.5rem;
+  font-weight: 800;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.trust-stat .label {
+  font-size: 0.9rem;
+  opacity: 0.9;
+  font-weight: 500;
+}
+
+/* Scroll indicator animation */
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-8px);
+  }
+  60% {
+    transform: translateY(-4px);
+  }
+}
+
+.scroll-indicator {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1.5rem;
+  animation: bounce 2s infinite;
+  transition: var(--transition-base);
+}
+
+.scroll-indicator:hover {
+  color: white;
+  text-decoration: none;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .hero-section {
+    background-attachment: scroll;
+    padding: 100px 0 60px;
+    text-align: center;
+  }
+  
+  .hero-section h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .hero-section .lead {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .client-avatars {
+    justify-content: center;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+  
+  .client-avatars .avatar-group {
+    margin-right: 0;
+  }
+  
+  .trust-indicators {
+    margin-top: 2rem;
+    padding: 1.5rem;
+  }
+  
+  .trust-stat .number {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-section h1 {
+    font-size: 2rem;
+  }
+  
+  .hero-section .btn-light,
+  .hero-section .btn-outline-light {
+    padding: 12px 20px;
+    font-size: 0.95rem;
+    display: block;
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+}
