@@ -100,12 +100,12 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // Global functions for hero section buttons
-function handleGetStarted() {
-    console.log('Hero Get Started button clicked');
-    alert('Ready to build something amazing?');
+function handleOurServices() {
+    console.log('Our Services button clicked');
+    window.location.href = '/pages/services.html';
 }
 
-function handleLearnMore() {
-    console.log('Hero Learn More button clicked');
-    alert('Discover more about our technology and features.');
+function handleViewWork() {
+    console.log('View Our Work button clicked');
+    window.location.href = '/pages/insights/portfolio.html';
 }
