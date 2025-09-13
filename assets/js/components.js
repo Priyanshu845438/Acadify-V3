@@ -102,6 +102,7 @@ document.addEventListener('DOMContentLoaded', function() {
     componentLoader.loadComponent('#hero-section', '/components/hero.html');
     componentLoader.loadComponent('#site-footer', '/components/footer.html');
     componentLoader.loadComponent('#testimonial-cta-section', '/components/testimonial-cta.html');
+    componentLoader.loadComponent('#bottom-cta-section', '/components/cta.html');
     
     // Load service cards with different content
     componentLoader.loadServiceCard('#service-card-1', 'bi-code-slash', 'Software Development', 'We provide custom software development for your business, Billing, Inventory and every custom solution.');
