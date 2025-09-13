@@ -1,5 +1,51 @@
 // Main JavaScript functionality
 document.addEventListener('DOMContentLoaded', function() {
+    
+    // --- Hero Section: Counter Animation ---
+    const counter = document.getElementById('satisfaction-counter');
+    if (counter) {
+        function animateCounter() {
+            let currentValue = 0;
+            const targetValue = 98;
+            const interval = setInterval(() => {
+                if (currentValue >= targetValue) {
+                    clearInterval(interval);
+                } else {
+                    currentValue++;
+                    counter.textContent = currentValue + '%';
+                }
+            }, 20); // Adjust speed here
+        }
+
+        // Use Intersection Observer to trigger counter only when visible
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounter();
+                    observer.unobserve(entry.target); // Animate only once
+                }
+            });
+        }, { threshold: 0.5 });
+        observer.observe(counter);
+    }
+
+    // --- Hero Section: Mouse Parallax Effect ---
+    const heroSection = document.querySelector('.hero-section');
+    const videoWrapper = document.querySelector('.hero-video-wrapper');
+    if (heroSection && videoWrapper) {
+        heroSection.addEventListener('mousemove', function(e) {
+            if (window.innerWidth > 992) { // Only apply on desktop
+                const { clientX, clientY } = e;
+                const { offsetWidth, offsetHeight } = heroSection;
+                
+                // Calculate movement amount (adjust divisor for more/less effect)
+                const xMovement = (clientX / offsetWidth - 0.5) * 20; 
+                const yMovement = (clientY / offsetHeight - 0.5) * 20;
+
+                videoWrapper.style.transform = `translate(${xMovement}px, ${yMovement}px)`;
+            }
+        });
+    }
     // Theme toggle functionality
     const themeToggle = document.getElementById('themeToggle');
     const themeIcon = document.getElementById('themeIcon');
