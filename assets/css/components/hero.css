@@ -126,7 +126,11 @@
 /* Video wrapper styling */
 .hero-video-wrapper {
   position: relative;
-  border-radius: 1rem;
+  border: 3px solid #0d336b;
+  border-radius: 1.25rem;
+  background-color: white;
+  padding: 1rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
   transition: transform 0.3s ease-out;
   animation: fadeInUp 0.8s ease 0.8s forwards;
   opacity: 0;
