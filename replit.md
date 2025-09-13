@@ -39,6 +39,13 @@ TechSite is a modern, component-based static website built for Ideovent Technolo
 - **Mobile Performance**: Smart video/image switching - professional team image placeholder for desktop, optimized fallback image for mobile
 - **Visual Hierarchy**: Updated typography with display-3 headline, improved spacing, and better contrast with animated background
 
+### September 2025 - Dark Mode Removal
+- **Complete Dark Mode Cleanup**: Removed dark mode toggle button from navigation bar 
+- **JavaScript Cleanup**: Eliminated all theme toggle functionality, localStorage theme handling, and related event listeners
+- **CSS Cleanup**: Removed all `[data-bs-theme="dark"]` CSS rules from global.css, navbar.css, hero.css, feature-card.css, and contact.css
+- **Code Optimization**: Streamlined codebase by removing unused dark mode styling and scripts
+- **Light Theme Focus**: Website now operates exclusively in light mode for consistent brand presentation
+
 ## User Preferences
 
 Preferred communication style: Simple, everyday language.

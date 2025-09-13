@@ -46,39 +46,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
-    // Theme toggle functionality
-    const themeToggle = document.getElementById('themeToggle');
-    const themeIcon = document.getElementById('themeIcon');
-    const html = document.documentElement;
-    
-    // Load saved theme
-    const savedTheme = localStorage.getItem('theme') || 'light';
-    html.setAttribute('data-bs-theme', savedTheme);
-    updateThemeIcon(savedTheme);
-    
-    // Theme toggle event (delegated since it's loaded dynamically)
-    document.addEventListener('click', function(e) {
-        if (e.target.closest('#themeToggle')) {
-            const currentTheme = html.getAttribute('data-bs-theme');
-            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-            
-            html.setAttribute('data-bs-theme', newTheme);
-            localStorage.setItem('theme', newTheme);
-            updateThemeIcon(newTheme);
-            
-            console.log('Theme toggled to:', newTheme);
-        }
-    });
-    
-    function updateThemeIcon(theme) {
-        // Wait for navbar to load before updating icon
-        setTimeout(() => {
-            const icon = document.getElementById('themeIcon');
-            if (icon) {
-                icon.className = theme === 'dark' ? 'bi bi-sun' : 'bi bi-moon';
-            }
-        }, 100);
-    }
     
     // Smooth scrolling for anchor links
     document.addEventListener('click', function(e) {

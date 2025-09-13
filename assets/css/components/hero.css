@@ -19,12 +19,6 @@
   100% { background-position: 0% 50%; }
 }
 
-/* Dark mode hero adjustment */
-[data-bs-theme="dark"] .hero-section {
-  background: linear-gradient(135deg, #0D2240, #0D6EFD);
-  background-size: 400% 400%;
-  animation: gradientAnimation 15s ease infinite;
-}
 
 /* Text animations */
 @keyframes fadeInUp {
