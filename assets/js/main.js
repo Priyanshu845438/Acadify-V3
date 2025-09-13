@@ -163,7 +163,7 @@ function handleViewWork() {
     window.location.href = '/pages/insights/portfolio.html';
 }
 
-// Case Study Modal Functionality
+// Professional Case Study Modal Functionality
 document.addEventListener('DOMContentLoaded', function() {
     const caseStudyModal = document.getElementById('caseStudyModal');
     
@@ -180,27 +180,53 @@ document.addEventListener('DOMContentLoaded', function() {
             const solution = button.getAttribute('data-solution');
             const results = button.getAttribute('data-results');
 
-            // Update the modal's content
-            const modalTitle = caseStudyModal.querySelector('.modal-title');
+            // Update the modal's content with professional structure
+            const modalProjectTitle = caseStudyModal.querySelector('#modal-project-title');
+            const modalCategoryBadge = caseStudyModal.querySelector('#modal-category-badge');
             const modalImage = caseStudyModal.querySelector('#modal-image');
             const modalChallenge = caseStudyModal.querySelector('#modal-challenge');
             const modalSolution = caseStudyModal.querySelector('#modal-solution');
             const modalResults = caseStudyModal.querySelector('#modal-results');
 
-            modalTitle.textContent = title + " - " + category;
-            modalImage.src = image;
-            modalImage.alt = title + " Case Study";
-            modalChallenge.textContent = challenge;
-            modalSolution.textContent = solution;
+            // Populate the professional modal elements
+            if (modalProjectTitle) modalProjectTitle.textContent = title;
+            if (modalCategoryBadge) modalCategoryBadge.textContent = category;
+            if (modalImage) {
+                modalImage.src = image;
+                modalImage.alt = title + " Case Study";
+            }
+            if (modalChallenge) modalChallenge.textContent = challenge;
+            if (modalSolution) modalSolution.textContent = solution;
             
-            // Format results as a list if they contain bullet points
-            if (results.includes('•')) {
-                const resultsArray = results.split('•').filter(item => item.trim());
-                modalResults.innerHTML = '<ul class="list-unstyled">' + 
-                    resultsArray.map(item => `<li class="mb-2"><i class="bi bi-check-circle text-primary me-2"></i>${item.trim()}</li>`).join('') + 
-                    '</ul>';
-            } else {
-                modalResults.textContent = results;
+            // Format results as professional metric cards
+            if (modalResults && results) {
+                if (results.includes('•')) {
+                    const resultsArray = results.split('•').filter(item => item.trim());
+                    modalResults.innerHTML = resultsArray.map(item => {
+                        const trimmedItem = item.trim();
+                        // Extract percentage or number if present
+                        const match = trimmedItem.match(/(\d+%|\d+\+|\d+,?\d*)/);
+                        const metric = match ? match[1] : '';
+                        const description = trimmedItem.replace(metric, '').trim();
+                        
+                        return `
+                            <div class="col-md-6 col-lg-4">
+                                <div class="bg-light rounded-3 p-4 h-100 text-center border border-primary border-opacity-10">
+                                    <div class="display-6 fw-bold text-primary mb-2">${metric || '✓'}</div>
+                                    <p class="mb-0 small text-muted">${description || trimmedItem}</p>
+                                </div>
+                            </div>
+                        `;
+                    }).join('');
+                } else {
+                    modalResults.innerHTML = `
+                        <div class="col-12">
+                            <div class="bg-light rounded-3 p-4 border border-primary border-opacity-10">
+                                <p class="mb-0 text-muted">${results}</p>
+                            </div>
+                        </div>
+                    `;
+                }
             }
         });
     }

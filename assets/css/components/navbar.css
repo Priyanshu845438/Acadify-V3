@@ -84,34 +84,36 @@ body {
 }
 
 
-/* Mobile dropdown styles */
-.dropdown-menu {
-  position: static !important;
-  transform: none !important;
-  border: none;
-  box-shadow: none;
-  padding: 0;
-  margin: 0;
-  background: transparent;
-  width: 100%;
-}
+/* Mobile-only dropdown styles */
+@media (max-width: 991.98px) {
+  .dropdown-menu {
+    position: static !important;
+    transform: none !important;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+    margin: 0;
+    background: transparent;
+    width: 100%;
+  }
 
-.dropdown-item {
-  color: var(--bs-secondary);
-  padding: 0.75rem 1.5rem;
-  font-weight: 400;
-  transition: var(--transition-base);
-  min-height: 44px;
-  display: flex;
-  align-items: center;
-  border-left: 3px solid transparent;
-}
+  .dropdown-item {
+    color: var(--bs-secondary);
+    padding: 0.75rem 1.5rem;
+    font-weight: 400;
+    transition: var(--transition-base);
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    border-left: 3px solid transparent;
+  }
 
-.dropdown-item:hover,
-.dropdown-item:focus {
-  background: rgba(var(--bs-primary-rgb), 0.05);
-  color: var(--bs-primary);
-  border-left-color: var(--bs-primary);
+  .dropdown-item:hover,
+  .dropdown-item:focus {
+    background: rgba(var(--bs-primary-rgb), 0.05);
+    color: var(--bs-primary);
+    border-left-color: var(--bs-primary);
+  }
 }
 
 /* Dropdown toggle arrow animation */
@@ -199,6 +201,7 @@ body {
     border-left: none;
     font-weight: 500;
     color: var(--bs-dark);
+    display: block;
   }
 
   .dropdown-item:hover,
