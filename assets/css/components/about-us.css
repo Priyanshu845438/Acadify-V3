@@ -1,6 +1,6 @@
-/* AppTestify Crowd Testing Platform Component Styles */
+/* About Us Component Styles */
 
-.apptestify-image-container {
+.about-us-image-container {
     position: relative;
     border: 3px solid #D48C00; /* Gold border */
     border-radius: 1.25rem;
@@ -10,7 +10,7 @@
     overflow: hidden;
 }
 
-.apptestify-rating-btn {
+.about-us-rating-btn {
     background-color: #D48C00; /* Gold background */
     border: 2px solid #D48C00;
     color: #212529 !important;
@@ -19,19 +19,15 @@
     transition: all 0.3s ease;
 }
 
-.apptestify-rating-btn:hover {
+.about-us-rating-btn:hover {
     background-color: #B8761A;
     border-color: #B8761A;
     color: #212529 !important;
     transform: translateY(-2px);
 }
 
-.apptestify-rating-btn .bi-star-fill {
+.about-us-rating-btn .bi-star-fill {
     color: #FFF;
-}
-
-.apptestify-rating-btn .bi-star {
-    color: rgba(255, 255, 255, 0.5);
 }
 
 /* Location Markers */
@@ -95,7 +91,7 @@
 
 /* Responsive adjustments */
 @media (max-width: 991.98px) {
-    .apptestify-image-container {
+    .about-us-image-container {
         margin-top: 2rem;
     }
     
