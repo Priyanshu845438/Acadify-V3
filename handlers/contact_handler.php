@@ -10,11 +10,19 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 }
 
 try {
-    // Get form data
-    $name = $_POST['name'] ?? '';
+    // Get form data - handle both name formats
+    $firstName = $_POST['firstName'] ?? '';
+    $lastName = $_POST['lastName'] ?? '';
+    $name = $_POST['name'] ?? trim($firstName . ' ' . $lastName);
     $email = $_POST['email'] ?? '';
     $phone = $_POST['phone'] ?? '';
     $message = $_POST['message'] ?? '';
+    
+    // Handle project type from contact form
+    $projectType = $_POST['projectType'] ?? '';
+    if ($projectType && $projectType !== 'Not specified') {
+        $message = "Project Type: " . $projectType . "\n\n" . $message;
+    }
     
     // Validation
     if (empty($name) || empty($email) || empty($message)) {

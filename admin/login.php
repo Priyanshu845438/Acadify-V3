@@ -20,8 +20,8 @@ if ($_POST) {
             $stmt->execute([$email]);
             $user = $stmt->fetch(PDO::FETCH_ASSOC);
             
-            // For the default password, let's verify it directly
-            if ($user && ($password === 'LoveDay@1103' || password_verify($password, $user['password_hash']))) {
+            // Verify password hash only - more secure
+            if ($user && password_verify($password, $user['password_hash'])) {
                 $_SESSION['admin_logged_in'] = true;
                 $_SESSION['admin_email'] = $user['email'];
                 header('Location: dashboard.php');
@@ -92,11 +92,6 @@ if ($_POST) {
                     </div>
                 </div>
                 
-                <div class="text-center mt-3">
-                    <small class="text-white-50">
-                        Default: acadify.online@gmail.com / LoveDay@1103
-                    </small>
-                </div>
             </div>
         </div>
     </div>
