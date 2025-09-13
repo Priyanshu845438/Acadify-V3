@@ -30,6 +30,14 @@ class ComponentLoader {
                 element.innerHTML = html;
                 // Initialize Bootstrap components after loading
                 this.initializeBootstrapComponents(element);
+                
+                // Special handling for case studies component
+                if (componentPath.includes('case-studies.html')) {
+                    // Small delay to ensure DOM is ready, then initialize modal
+                    setTimeout(() => {
+                        this.initializeCaseStudyModal();
+                    }, 100);
+                }
             }
         } catch (error) {
             console.error('Error loading component:', error);
@@ -72,6 +80,80 @@ class ComponentLoader {
                 }
             }
         });
+
+        // Initialize case study modal functionality if case studies are loaded
+        if (element.querySelector('#caseStudyModal') || document.querySelector('#caseStudyModal')) {
+            this.initializeCaseStudyModal();
+        }
+    }
+
+    initializeCaseStudyModal() {
+        const caseStudyModal = document.getElementById('caseStudyModal');
+        
+        if (caseStudyModal && !caseStudyModal._modal_initialized) {
+            caseStudyModal.addEventListener('show.bs.modal', function (event) {
+                // Button that triggered the modal
+                const button = event.relatedTarget;
+
+                // Extract info from data attributes
+                const title = button.getAttribute('data-title');
+                const image = button.getAttribute('data-image');
+                const category = button.getAttribute('data-category');
+                const challenge = button.getAttribute('data-challenge');
+                const solution = button.getAttribute('data-solution');
+                const results = button.getAttribute('data-results');
+
+                // Update the modal's content
+                const modalProjectTitle = caseStudyModal.querySelector('#modal-project-title');
+                const modalCategoryBadge = caseStudyModal.querySelector('#modal-category-badge');
+                const modalImage = caseStudyModal.querySelector('#modal-image');
+                const modalChallenge = caseStudyModal.querySelector('#modal-challenge');
+                const modalSolution = caseStudyModal.querySelector('#modal-solution');
+                const modalResults = caseStudyModal.querySelector('#modal-results');
+
+                // Populate the modal elements
+                if (modalProjectTitle) modalProjectTitle.textContent = title;
+                if (modalCategoryBadge) modalCategoryBadge.textContent = category;
+                if (modalImage) {
+                    modalImage.src = image;
+                    modalImage.alt = title + " Case Study";
+                }
+                if (modalChallenge) modalChallenge.textContent = challenge;
+                if (modalSolution) modalSolution.textContent = solution;
+                
+                // Format results as professional metric cards
+                if (modalResults && results) {
+                    if (results.includes('•')) {
+                        const resultsArray = results.split('•').filter(item => item.trim());
+                        modalResults.innerHTML = resultsArray.map(item => {
+                            const trimmedItem = item.trim();
+                            // Extract percentage or number if present
+                            const match = trimmedItem.match(/(\d+%|\d+\+|\d+,?\d*)/);
+                            const metric = match ? match[1] : '';
+                            const description = trimmedItem.replace(metric, '').trim();
+                            
+                            return `
+                                <div class="col-md-6 col-lg-4">
+                                    <div class="bg-light rounded-3 p-4 h-100 text-center border border-primary border-opacity-10">
+                                        <div class="display-6 fw-bold text-primary mb-2">${metric || '✓'}</div>
+                                        <p class="mb-0 small text-muted">${description || trimmedItem}</p>
+                                    </div>
+                                </div>
+                            `;
+                        }).join('');
+                    } else {
+                        modalResults.innerHTML = `
+                            <div class="col-12">
+                                <div class="bg-light rounded-3 p-4 border border-primary border-opacity-10">
+                                    <p class="mb-0 text-muted">${results}</p>
+                                </div>
+                            </div>
+                        `;
+                    }
+                }
+            });
+            caseStudyModal._modal_initialized = true;
+        }
     }
 
     async loadServiceCard(selector, icon, title, description, link = '#') {
