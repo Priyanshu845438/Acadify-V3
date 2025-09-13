@@ -149,77 +149,136 @@
         </div>
     </section>
     
-    <!-- Testimonials Section -->
-    <section class="py-5">
+    <!-- Portfolio Snapshot Section -->
+    <section class="py-5 bg-white">
         <div class="container">
             <div class="row text-center mb-5">
                 <div class="col-lg-8 mx-auto">
-                    <h2 class="display-6 fw-bold mb-3" data-testid="text-testimonials-title">What Our Clients Say</h2>
-                    <p class="lead text-muted" data-testid="text-testimonials-subtitle">
-                        Don't just take our word for it. Here's what our clients have to say about our work.
-                    </p>
+                    <h2 class="display-5 fw-bold mb-3">Our Proven Track Record</h2>
+                    <p class="lead text-muted">Discover the success stories and impactful solutions we've delivered for our clients</p>
                 </div>
             </div>
-            <div class="row g-4">
-                <div class="col-md-6 col-lg-4">
-                    <div id="testimonial-card-1"></div>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <div id="testimonial-card-2"></div>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <div id="testimonial-card-3"></div>
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <div id="portfolioCarousel" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#portfolioCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#portfolioCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                            <button type="button" data-bs-target="#portfolioCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                            <button type="button" data-bs-target="#portfolioCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                        </div>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <div class="row align-items-center">
+                                    <div class="col-md-6">
+                                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80" 
+                                             class="d-block w-100 rounded shadow" alt="E-commerce Platform">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="p-4">
+                                            <h3 class="fw-bold mb-3">E-commerce Platform Development</h3>
+                                            <p class="text-muted mb-4">Built a comprehensive e-commerce solution that increased online sales by 300% for our retail client.</p>
+                                            <button class="btn btn-primary">View Case Study</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="row align-items-center">
+                                    <div class="col-md-6">
+                                        <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=800&q=80" 
+                                             class="d-block w-100 rounded shadow" alt="Mobile Banking App">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="p-4">
+                                            <h3 class="fw-bold mb-3">Mobile Banking Application</h3>
+                                            <p class="text-muted mb-4">Developed a secure, user-friendly banking app that serves over 50,000 active users daily.</p>
+                                            <button class="btn btn-primary">View Case Study</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="row align-items-center">
+                                    <div class="col-md-6">
+                                        <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80" 
+                                             class="d-block w-100 rounded shadow" alt="Healthcare Management System">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="p-4">
+                                            <h3 class="fw-bold mb-3">Healthcare Management System</h3>
+                                            <p class="text-muted mb-4">Created an integrated healthcare platform that streamlined operations for a network of 25 clinics.</p>
+                                            <button class="btn btn-primary">View Case Study</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="row align-items-center">
+                                    <div class="col-md-6">
+                                        <img src="https://images.unsplash.com/photo-1553028826-f4804a6dba3b?auto=format&fit=crop&w=800&q=80" 
+                                             class="d-block w-100 rounded shadow" alt="EdTech Learning Platform">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="p-4">
+                                            <h3 class="fw-bold mb-3">EdTech Learning Platform</h3>
+                                            <p class="text-muted mb-4">Built an innovative learning management system that improved student engagement by 250%.</p>
+                                            <button class="btn btn-primary">View Case Study</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#portfolioCarousel" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#portfolioCarousel" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
     
-    <!-- About Section -->
-    <section id="about" class="py-5 bg-light">
+    <!-- Testimonial Block -->
+    <section class="py-5 bg-light">
         <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6">
-                    <h2 class="display-6 fw-bold mb-4" data-testid="text-about-title">About Our Technology</h2>
-                    <p class="lead mb-4" data-testid="text-about-description">
-                        We specialize in creating cutting-edge web solutions that combine performance, 
-                        accessibility, and beautiful design. Our Bootstrap-based approach ensures your 
-                        website works perfectly across all devices.
-                    </p>
-                    <div class="row g-3">
-                        <div class="col-6">
-                            <div class="d-flex align-items-center">
-                                <i class="bi bi-check-circle text-primary me-2 fs-5"></i>
-                                <span>Responsive Design</span>
-                            </div>
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <blockquote class="blockquote">
+                        <p class="display-6 fw-light mb-4" style="line-height: 1.4;">
+                            "Ideovent Technologies transformed our entire digital presence. Their strategic approach and flawless execution helped us achieve a 250% increase in online conversions within just six months."
+                        </p>
+                    </blockquote>
+                    <div class="d-flex align-items-center justify-content-center mt-4">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&q=80" 
+                             alt="Client CEO" class="rounded-circle me-3" width="60" height="60">
+                        <div class="text-start">
+                            <h6 class="fw-bold mb-0">Rajesh Kumar</h6>
+                            <small class="text-muted">CEO, TechStart Solutions</small>
                         </div>
-                        <div class="col-6">
-                            <div class="d-flex align-items-center">
-                                <i class="bi bi-check-circle text-primary me-2 fs-5"></i>
-                                <span>Fast Loading</span>
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="d-flex align-items-center">
-                                <i class="bi bi-check-circle text-primary me-2 fs-5"></i>
-                                <span>SEO Optimized</span>
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="d-flex align-items-center">
-                                <i class="bi bi-check-circle text-primary me-2 fs-5"></i>
-                                <span>Cross-browser</span>
-                            </div>
-                        </div>
+                        <img src="https://via.placeholder.com/120x40/0D6EFD/FFFFFF?text=LOGO" 
+                             alt="Company Logo" class="ms-4" height="40">
                     </div>
                 </div>
-                <div class="col-lg-6">
-                    <div class="text-center">
-                        <div class="bg-primary bg-gradient rounded-3 p-5 text-white">
-                            <i class="bi bi-code-slash display-1 mb-3"></i>
-                            <h3>Clean Code</h3>
-                            <p class="mb-0">Built with modern standards and best practices</p>
-                        </div>
-                    </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Final CTA Section -->
+    <section class="py-5 bg-primary text-white">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h2 class="display-5 fw-bold mb-4">Ready to elevate your digital presence?</h2>
+                    <p class="lead mb-4">Join the hundreds of businesses that have transformed their growth with our digital solutions</p>
+                    <button class="btn btn-light btn-lg px-5 py-3">
+                        <i class="bi bi-arrow-right me-2"></i>
+                        Start Your Project Today
+                    </button>
                 </div>
             </div>
         </div>
