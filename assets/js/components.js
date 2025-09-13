@@ -37,12 +37,22 @@ class ComponentLoader {
     }
 
     initializeBootstrapComponents(element) {
+        // Wait for Bootstrap to be available
+        if (typeof bootstrap === 'undefined') {
+            setTimeout(() => this.initializeBootstrapComponents(element), 100);
+            return;
+        }
+
         // Initialize dropdowns
         const dropdownTriggers = element.querySelectorAll('[data-bs-toggle="dropdown"]');
         dropdownTriggers.forEach(trigger => {
             if (!trigger._bootstrap_dropdown_initialized) {
-                new bootstrap.Dropdown(trigger);
-                trigger._bootstrap_dropdown_initialized = true;
+                try {
+                    new bootstrap.Dropdown(trigger);
+                    trigger._bootstrap_dropdown_initialized = true;
+                } catch (error) {
+                    console.error('Error initializing dropdown:', error);
+                }
             }
         });
 
@@ -53,8 +63,12 @@ class ComponentLoader {
                 const targetId = trigger.getAttribute('data-bs-target');
                 const target = document.querySelector(targetId);
                 if (target) {
-                    new bootstrap.Collapse(target, { toggle: false });
-                    trigger._bootstrap_collapse_initialized = true;
+                    try {
+                        new bootstrap.Collapse(target, { toggle: false });
+                        trigger._bootstrap_collapse_initialized = true;
+                    } catch (error) {
+                        console.error('Error initializing collapse:', error);
+                    }
                 }
             }
         });
@@ -123,8 +137,8 @@ class ComponentLoader {
 // Initialize component loader
 const componentLoader = new ComponentLoader();
 
-// Load components when DOM is ready
-document.addEventListener('DOMContentLoaded', function() {
+// Function to initialize all components
+function initializeComponents() {
     // Load main components
     componentLoader.loadComponent('#site-header', '/components/navbar.html');
     componentLoader.loadComponent('#hero-section', '/components/hero.html');
@@ -168,4 +182,20 @@ document.addEventListener('DOMContentLoaded', function() {
         'Marketing Director, GrowthBiz',
         'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=100&q=80'
     );
+}
+
+// Load components when DOM is ready and Bootstrap is available
+document.addEventListener('DOMContentLoaded', function() {
+    // Wait a bit for Bootstrap to load, then initialize components
+    if (typeof bootstrap !== 'undefined') {
+        initializeComponents();
+    } else {
+        // Wait for Bootstrap to load
+        const checkBootstrap = setInterval(() => {
+            if (typeof bootstrap !== 'undefined') {
+                clearInterval(checkBootstrap);
+                initializeComponents();
+            }
+        }, 50);
+    }
 });
