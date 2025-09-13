@@ -1,4 +1,4 @@
-modules = ["web", "nodejs-20", "php", "postgresql-16"]
+modules = ["web", "nodejs-20", "php", "postgresql-16", "php-8.2"]
 run = "npm run dev"
 hidden = [".config", ".git", "generated-icon.png", "node_modules", "dist"]
 
@@ -13,14 +13,6 @@ run = ["http-server", ".", "-p", "8000", "-a", "0.0.0.0", "--cors"]
 [[ports]]
 localPort = 5000
 externalPort = 80
-
-[[ports]]
-localPort = 34177
-externalPort = 3001
-
-[[ports]]
-localPort = 37977
-externalPort = 3003
 
 [[ports]]
 localPort = 39655
@@ -43,15 +35,15 @@ author = "agent"
 
 [[workflows.workflow.tasks]]
 task = "workflow.run"
-args = "Frontend Server"
+args = "Full Stack Server"
 
 [[workflows.workflow]]
-name = "Frontend Server"
+name = "Full Stack Server"
 author = "agent"
 
 [[workflows.workflow.tasks]]
 task = "shell.exec"
-args = "npm run dev"
+args = "php -S 0.0.0.0:5000 -t ."
 waitForPort = 5000
 
 [workflows.workflow.metadata]
