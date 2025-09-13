@@ -2,7 +2,16 @@
 
 ## Overview
 
-TechSite is a modern, component-based static website built for Ideovent Technologies. It showcases web development services through a responsive, Bootstrap-powered interface with modular HTML components and a sophisticated design system. The site features dynamic theme switching, smooth animations, and a professional service-oriented layout.
+TechSite is a modern, component-based static website built for Ideovent Technologies. It showcases web development services through a responsive, Bootstrap-powered interface with modular HTML components and a sophisticated design system. The site features dynamic theme switching, smooth animations, and a professional service-oriented layout with comprehensive navigation structure.
+
+## Recent Changes
+
+### December 2024 - Navigation & Content Expansion
+- **Comprehensive Navigation**: Implemented dropdown menu system with Services, Industries, Solutions, Insights, and About Us sections
+- **New Pages Created**: Five main pages with detailed content covering all business verticals
+- **Path Resolution**: Updated to root-relative URL structure for consistent navigation across all page levels
+- **Dropdown Styling**: Advanced CSS styling with dark mode support and mobile-responsive design
+- **Content Organization**: Structured content with hero sections, detailed service descriptions, and call-to-action elements
 
 ## User Preferences
 
@@ -27,6 +36,15 @@ Preferred communication style: Simple, everyday language.
 - **Dynamic Loading**: JavaScript-based component loader that fetches and injects HTML partials
 - **Template Customization**: Service cards and feature cards support dynamic content injection
 - **State Management**: Local storage for theme persistence
+- **Navigation System**: Bootstrap 5 dropdown menus with root-relative path resolution
+
+### Page Structure
+- **Home Page**: Main landing page with hero section, services overview, and testimonials
+- **Services Page**: Comprehensive service offerings including app development, web development, UI/UX design, digital marketing
+- **Industries Page**: Sector-specific solutions for banking, healthcare, retail, education, and more
+- **Solutions Page**: Business solutions including ERP, CRM, HRMS, POS, and digital transformation services  
+- **Insights Page**: Knowledge hub with blogs, case studies, portfolio showcase, and testimonials
+- **About Page**: Company information, leadership team, partnerships, and core values
 
 ### Development Setup
 - **Build Tool**: http-server for local development
