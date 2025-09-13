@@ -502,3 +502,74 @@ html {
      text-align: center !important; /* Center all text on mobile */
   }
 }
+
+/* Trusted By Logo Slider Styling */
+.logo-slider {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.logo-slider__track {
+  display: flex;
+  width: calc(200px * 16); /* (width of one logo) * (total number of logos, including duplicates) */
+  animation: scroll 40s linear infinite;
+}
+
+.logo-slider:hover .logo-slider__track {
+  animation-play-state: paused;
+}
+
+.logo-slider__item {
+  width: 200px;
+  flex-shrink: 0;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.logo-slider__item img {
+  max-width: 150px;
+  height: 60px;
+  object-fit: contain;
+  filter: grayscale(100%);
+  opacity: 0.8;
+  transition: all 0.3s ease;
+}
+
+.logo-slider__item:hover img {
+  filter: grayscale(0%);
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-200px * 8)); /* (width of one logo) * (number of ORIGINAL logos) */
+  }
+}
+
+/* Mobile Responsive for Logo Slider */
+@media (max-width: 767.98px) {
+  .logo-slider__item {
+    width: 150px;
+    padding: 0 15px;
+  }
+  
+  .logo-slider__item img {
+    max-width: 120px;
+    height: 50px;
+  }
+
+  .logo-slider__track {
+    width: calc(150px * 16); /* (new mobile width) * (total logos) */
+  }
+  
+  @keyframes scroll {
+    100% {
+      transform: translateX(calc(-150px * 8)); /* (new mobile width) * (original logos) */
+    }
+  }
+}
