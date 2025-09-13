@@ -109,3 +109,46 @@ function handleViewWork() {
     console.log('View Our Work button clicked');
     window.location.href = '/pages/insights/portfolio.html';
 }
+
+// Case Study Modal Functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const caseStudyModal = document.getElementById('caseStudyModal');
+    
+    if (caseStudyModal) {
+        caseStudyModal.addEventListener('show.bs.modal', function (event) {
+            // Button that triggered the modal
+            const button = event.relatedTarget;
+
+            // Extract info from data-bs-* attributes
+            const title = button.getAttribute('data-title');
+            const image = button.getAttribute('data-image');
+            const category = button.getAttribute('data-category');
+            const challenge = button.getAttribute('data-challenge');
+            const solution = button.getAttribute('data-solution');
+            const results = button.getAttribute('data-results');
+
+            // Update the modal's content
+            const modalTitle = caseStudyModal.querySelector('.modal-title');
+            const modalImage = caseStudyModal.querySelector('#modal-image');
+            const modalChallenge = caseStudyModal.querySelector('#modal-challenge');
+            const modalSolution = caseStudyModal.querySelector('#modal-solution');
+            const modalResults = caseStudyModal.querySelector('#modal-results');
+
+            modalTitle.textContent = title + " - " + category;
+            modalImage.src = image;
+            modalImage.alt = title + " Case Study";
+            modalChallenge.textContent = challenge;
+            modalSolution.textContent = solution;
+            
+            // Format results as a list if they contain bullet points
+            if (results.includes('•')) {
+                const resultsArray = results.split('•').filter(item => item.trim());
+                modalResults.innerHTML = '<ul class="list-unstyled">' + 
+                    resultsArray.map(item => `<li class="mb-2"><i class="bi bi-check-circle text-primary me-2"></i>${item.trim()}</li>`).join('') + 
+                    '</ul>';
+            } else {
+                modalResults.textContent = results;
+            }
+        });
+    }
+});

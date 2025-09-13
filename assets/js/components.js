@@ -102,6 +102,7 @@ document.addEventListener('DOMContentLoaded', function() {
     componentLoader.loadComponent('#hero-section', '/components/hero.html');
     componentLoader.loadComponent('#site-footer', '/components/footer.html');
     componentLoader.loadComponent('#why-choose-us-section', '/components/why-choose-us.html');
+    componentLoader.loadComponent('#case-studies-section', '/components/case-studies.html');
     componentLoader.loadComponent('#testimonial-cta-section', '/components/testimonial-cta.html');
     componentLoader.loadComponent('#bottom-cta-section', '/components/cta.html');
     
