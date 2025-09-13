@@ -69,6 +69,13 @@ p, li, span {
   color: var(--muted-gray);
 }
 
+/* Page Header Section - Flush Top Design Utility */
+.page-header-section {
+  margin-top: 0 !important;
+  padding-top: 6rem !important;
+  background-color: #F8F9FA !important;
+}
+
 /* New Flush Hero Section - Premium Design */
 .hero-flush {
   position: relative;
