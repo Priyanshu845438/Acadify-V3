@@ -1,5 +1,6 @@
 <?php
 require_once '../config/database.php';
+require_once '../config/email.php';
 
 header('Content-Type: application/json');
 
@@ -46,9 +47,33 @@ try {
     
     $stmt->execute([$name, $email, $phone, $message]);
     
+    // Send email notifications
+    try {
+        $mailer = new ReplitMail();
+        
+        // Prepare contact data for email
+        $contactData = [
+            'name' => $name,
+            'email' => $email,
+            'phone' => $phone,
+            'message' => $message,
+            'subject' => $projectType ?: 'General Inquiry'
+        ];
+        
+        // Send notification to admin
+        $mailer->sendContactNotificationToAdmin($contactData);
+        
+        // Send confirmation to user
+        $mailer->sendContactConfirmationToUser($contactData);
+        
+    } catch (Throwable $emailError) {
+        // Log email error but don't fail the form submission
+        error_log("Email error in contact_handler.php: " . $emailError->getMessage());
+    }
+    
     echo json_encode([
         'success' => true, 
-        'message' => 'Thank you for your message! We will get back to you soon.'
+        'message' => 'Thank you for your message! We have received your inquiry and will get back to you within 24 hours. You should also receive a confirmation email shortly.'
     ]);
     
 } catch (PDOException $e) {
@@ -58,7 +83,7 @@ try {
         'success' => false, 
         'message' => 'Sorry, there was an error processing your request. Please try again later.'
     ]);
-} catch (Exception $e) {
+} catch (Throwable $e) {
     error_log("General error in contact_handler.php: " . $e->getMessage());
     http_response_code(500);
     echo json_encode([

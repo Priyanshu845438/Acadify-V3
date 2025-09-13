@@ -1,5 +1,6 @@
 <?php
 require_once '../config/database.php';
+require_once '../config/email.php';
 
 header('Content-Type: application/json');
 
@@ -40,9 +41,34 @@ try {
     
     $stmt->execute([$company_name, $contact_person, $email, $phone, $business_type, $message]);
     
+    // Send email notifications
+    try {
+        $mailer = new ReplitMail();
+        
+        // Prepare partner data for email
+        $partnerData = [
+            'company_name' => $company_name,
+            'contact_person' => $contact_person,
+            'email' => $email,
+            'phone' => $phone,
+            'business_type' => $business_type,
+            'message' => $message
+        ];
+        
+        // Send notification to admin
+        $mailer->sendPartnerNotificationToAdmin($partnerData);
+        
+        // Send confirmation to user
+        $mailer->sendPartnerConfirmationToUser($partnerData);
+        
+    } catch (Throwable $emailError) {
+        // Log email error but don't fail the form submission
+        error_log("Email error in partner_handler.php: " . $emailError->getMessage());
+    }
+    
     echo json_encode([
         'success' => true, 
-        'message' => 'Thank you for your partnership inquiry! We will review your application and get back to you soon.'
+        'message' => 'Thank you for your partnership inquiry! We have received your application and our partnerships team will review it within 2-3 business days. You should receive a confirmation email shortly.'
     ]);
     
 } catch (PDOException $e) {
@@ -52,7 +78,7 @@ try {
         'success' => false, 
         'message' => 'Sorry, there was an error processing your request. Please try again later.'
     ]);
-} catch (Exception $e) {
+} catch (Throwable $e) {
     error_log("General error in partner_handler.php: " . $e->getMessage());
     http_response_code(500);
     echo json_encode([
