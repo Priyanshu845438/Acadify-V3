@@ -30,7 +30,7 @@ TechSite is a modern, component-based static website built for Ideovent Technolo
 - **Mobile Responsive**: Bootstrap 5 grid system ensuring perfect layout across desktop (3-column), tablet (2-column), and mobile (1-column)
 
 ### September 2025 - Advanced Hero Section Enhancement
-- **Dynamic Background**: Replaced static background with animated gradient using deep blue (#0D2240) to primary blue (#0D6EFD) with slow 15s animation cycle
+- **Dynamic Background**: Replaced static background with animated gradient using deep blue (#0D2240) to primary blue (#0d3269) with slow 15s animation cycle
 - **Text Animations**: Added staggered fade-in-up animations for headline, subheadline, buttons, and social proof elements with proper timing delays
 - **Layout Optimization**: Converted to modern 2-column layout (6-6) with better mobile responsiveness and centered/left-aligned text
 - **Interactive Elements**: Implemented mouse parallax effect on video wrapper for desktop users with smooth transform animations
