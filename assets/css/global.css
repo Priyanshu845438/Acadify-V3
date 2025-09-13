@@ -442,3 +442,63 @@ html {
 .results-list {
   line-height: 1.8;
 }
+
+/* Diagonal Testimonial & CTA Section Styling */
+.testimonial-cta-section {
+  position: relative;
+  background-color: #f8f9fa; /* The light gray for the left side */
+  overflow: hidden; /* Important for the pseudo-element */
+}
+
+/* This pseudo-element creates the blue diagonal shape */
+.testimonial-cta-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #0D6EFD; /* The primary blue */
+  
+  /* The magic for the diagonal cut */
+  clip-path: polygon(50% 0, 100% 0, 100% 100%, 40% 100%);
+  
+  z-index: 1;
+}
+
+/* Custom styles for carousel controls to match the professional look */
+.carousel-controls {
+  position: relative;
+  width: 100px;
+}
+.carousel-controls .carousel-control-prev,
+.carousel-controls .carousel-control-next {
+  position: static;
+  display: inline-block;
+  opacity: 0.7;
+  background: none;
+  border: none;
+}
+.carousel-controls .carousel-control-prev:hover,
+.carousel-controls .carousel-control-next:hover {
+  opacity: 1;
+}
+
+/* --- MOBILE RESPONSIVE ADJUSTMENTS --- */
+@media (max-width: 991.98px) {
+  /* On tablets and mobile, remove the diagonal cut */
+  .testimonial-cta-section::before {
+    clip-path: none; /* Disables the clip-path */
+    height: 50%;     /* Makes the blue cover the bottom half */
+    top: 50%;        /* Positions the blue at the bottom */
+  }
+  
+  /* We need to re-style the section to stack properly */
+  .testimonial-cta-section {
+    background-color: #f8f9fa; /* Top half background */
+  }
+  
+  .testimonial-cta-section .col-lg-6 {
+     text-align: center !important; /* Center all text on mobile */
+  }
+}
