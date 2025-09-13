@@ -20,9 +20,15 @@ try {
     $partner_stmt->execute();
     $partner_entries = $partner_stmt->fetchAll(PDO::FETCH_ASSOC);
     
+    // Get quote requests
+    $quote_stmt = $pdo->prepare("SELECT * FROM quote_requests ORDER BY created_at DESC");
+    $quote_stmt->execute();
+    $quote_requests = $quote_stmt->fetchAll(PDO::FETCH_ASSOC);
+    
     // Get counts
     $contact_count = count($contact_entries);
     $partner_count = count($partner_entries);
+    $quote_count = count($quote_requests);
     
 } catch (PDOException $e) {
     die('Database error: ' . $e->getMessage());
@@ -93,6 +99,11 @@ if (isset($_GET['logout'])) {
                                 <i class="bi bi-handshake"></i> Partner Entries (<?php echo $partner_count; ?>)
                             </a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" data-tab="quotes">
+                                <i class="bi bi-calculator"></i> Quote Requests (<?php echo $quote_count; ?>)
+                            </a>
+                        </li>
                         <li class="nav-item mt-4">
                             <a class="nav-link" href="?logout=1">
                                 <i class="bi bi-box-arrow-right"></i> Logout
@@ -114,7 +125,7 @@ if (isset($_GET['logout'])) {
                 <!-- Overview Tab -->
                 <div id="overview-tab" class="tab-content">
                     <div class="row mb-4">
-                        <div class="col-md-6">
+                        <div class="col-md-4">
                             <div class="card stats-card">
                                 <div class="card-body text-center">
                                     <i class="bi bi-envelope display-4 mb-2"></i>
@@ -123,12 +134,21 @@ if (isset($_GET['logout'])) {
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-4">
                             <div class="card stats-card">
                                 <div class="card-body text-center">
                                     <i class="bi bi-handshake display-4 mb-2"></i>
                                     <h3><?php echo $partner_count; ?></h3>
                                     <p class="mb-0">Partner Entries</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card stats-card">
+                                <div class="card-body text-center">
+                                    <i class="bi bi-calculator display-4 mb-2"></i>
+                                    <h3><?php echo $quote_count; ?></h3>
+                                    <p class="mb-0">Quote Requests</p>
                                 </div>
                             </div>
                         </div>
@@ -204,6 +224,50 @@ if (isset($_GET['logout'])) {
                                 <?php if (empty($partner_entries)): ?>
                                 <tr>
                                     <td colspan="8" class="text-center text-muted">No partner entries found</td>
+                                </tr>
+                                <?php endif; ?>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Quote Requests Tab -->
+                <div id="quotes-tab" class="tab-content" style="display: none;">
+                    <h3>Quote Requests</h3>
+                    <div class="table-responsive">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Phone</th>
+                                    <th>Company</th>
+                                    <th>Service</th>
+                                    <th>Budget</th>
+                                    <th>Timeline</th>
+                                    <th>Description</th>
+                                    <th>Date</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php foreach ($quote_requests as $entry): ?>
+                                <tr>
+                                    <td><?php echo htmlspecialchars($entry['id']); ?></td>
+                                    <td><?php echo htmlspecialchars($entry['name']); ?></td>
+                                    <td><?php echo htmlspecialchars($entry['email']); ?></td>
+                                    <td><?php echo htmlspecialchars($entry['phone'] ?? '-'); ?></td>
+                                    <td><?php echo htmlspecialchars($entry['company'] ?? '-'); ?></td>
+                                    <td><?php echo htmlspecialchars($entry['service_type']); ?></td>
+                                    <td><?php echo htmlspecialchars($entry['project_budget'] ?? '-'); ?></td>
+                                    <td><?php echo htmlspecialchars($entry['project_timeline'] ?? '-'); ?></td>
+                                    <td><?php echo htmlspecialchars(substr($entry['project_description'] ?? '', 0, 50)) . (strlen($entry['project_description'] ?? '') > 50 ? '...' : ''); ?></td>
+                                    <td><?php echo date('M d, Y H:i', strtotime($entry['created_at'])); ?></td>
+                                </tr>
+                                <?php endforeach; ?>
+                                <?php if (empty($quote_requests)): ?>
+                                <tr>
+                                    <td colspan="10" class="text-center text-muted">No quote requests found</td>
                                 </tr>
                                 <?php endif; ?>
                             </tbody>
