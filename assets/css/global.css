@@ -367,3 +367,22 @@ html {
 .text-primary .position-absolute {
   transition: width 0.3s ease;
 }
+
+/* Advantage Cards Enhanced Styling */
+.advantage-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.advantage-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Feature Icon Consistent Sizing */
+.feature-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 4rem;
+  height: 4rem;
+}
